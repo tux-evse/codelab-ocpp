@@ -3,7 +3,7 @@ use validator::Validate;
 
 /// OCSPRequestDataType is used by: AuthorizeRequest , GetCertificateStatusRequest
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Validate, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct OCSPRequestDataType {
     pub hash_algorithm: HashAlgorithmEnumType,
     #[validate(length(min = 0, max = 128))]

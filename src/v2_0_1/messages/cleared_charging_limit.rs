@@ -3,7 +3,7 @@ use crate::v2_0_1::enumerations::charging_limit_source_enum_type::ChargingLimitS
 
 /// ClearedChargingLimitRequest, sent by the Charging Station to the CSMS
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ClearedChargingLimitRequest {
     /// Source of the charging limit.
     pub charging_limit_source: ChargingLimitSourceEnumType,
@@ -14,7 +14,7 @@ pub struct ClearedChargingLimitRequest {
 
 /// ClearedChargingLimitResponse, sent by the CSMS to the Charging Station.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ClearedChargingLimitResponse {
     // No fields are defined.
 }

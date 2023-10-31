@@ -5,7 +5,7 @@ use crate::v2_0_1::enumerations::trigger_message_status_enum_type::TriggerMessag
 
 /// This contains the field definition of the TriggerMessageRequest PDU sent by the CSMS to the Charging Station.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct TriggerMessageRequest {
     pub requested_message: MessageTriggerEnumType,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -14,7 +14,7 @@ pub struct TriggerMessageRequest {
 
 /// This contains the field definition of the TriggerMessageResponse PDU sent by the Charging Station to the CSMS in response to TriggerMessageResponse.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct TriggerMessageResponse {
     pub status: TriggerMessageStatusEnumType,
     #[serde(skip_serializing_if = "Option::is_none")]

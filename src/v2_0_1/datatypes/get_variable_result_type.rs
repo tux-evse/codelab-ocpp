@@ -8,7 +8,7 @@ use validator::Validate;
 /// Class to hold parameters for GetVariables request.
 /// GetVariableDataType is used by: GetVariablesRequest
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Validate, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct GetVariableResultType {
     pub attribute_status: GetVariableStatusEnumType,
     #[serde(skip_serializing_if = "Option::is_none")]

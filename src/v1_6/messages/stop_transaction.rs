@@ -5,7 +5,7 @@ use validator::Validate;
 
 /// This contains the field definition of the StopTransaction.req PDU sent by the Charge Point to the Central System. See also Stop Transaction
 #[derive(serde::Serialize, serde::Deserialize, Validate, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct StopTransactionRequest {
     /// Required.
     #[validate(length(min = 1, max = 20))]
@@ -27,7 +27,7 @@ pub struct StopTransactionRequest {
 
 /// This contains the field definition of the TriggerMessage.req PDU sent by the Central System to the Charge Point. See also Trigger Message
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct StopTransactionResponse {
     /// Optional. This contains information about authorization status, expiry and parent id. It is optional, because a transaction may have been stopped without an identifier.
     #[serde(skip_serializing_if = "Option::is_none")]

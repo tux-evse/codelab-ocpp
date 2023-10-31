@@ -7,7 +7,7 @@
 //! the CPO help-desk, an operator could manually trigger the sending of an UnlockConnector.req to
 //! the Charge Point, forcing a new attempt to unlock the connector. Hopefully this time the
 //! connector unlocks and the EV driver can unplug the cable and drive away.
-//!  
+//!
 //! The UnlockConnector.req SHOULD NOT be used to remotely stop a running transaction, use the
 //! Remote Stop Transaction instead.
 //!
@@ -24,7 +24,7 @@ use crate::v1_6::types::UnlockStatus;
 use validator::Validate;
 
 #[derive(serde::Serialize, serde::Deserialize, Validate, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct UnlockConnectorRequest {
     /// # From OCPP Specification
     /// Required. This contains the identifier of the connector to be unlocked.
@@ -33,7 +33,7 @@ pub struct UnlockConnectorRequest {
 }
 
 #[derive(serde::Serialize, serde::Deserialize, Validate, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct UnlockConnectorResponse {
     /// # From OCPP Specification
     /// Required. This indicates whether the Charge Point has unlocked the connector.

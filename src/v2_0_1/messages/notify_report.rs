@@ -5,7 +5,7 @@ use crate::v2_0_1::datatypes::report_data_type::ReportDataType;
 
 /// This contains the field definition of the NotifyReportRequest PDU sent by the Charging Station to the CSMS.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct NotifyReportRequest {
     pub request_id: i32,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -18,5 +18,5 @@ pub struct NotifyReportRequest {
 
 /// Response to a NotifyReportRequest message. No fields are defined.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct NotifyReportResponse {}

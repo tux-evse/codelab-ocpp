@@ -6,7 +6,7 @@ use crate::v2_0_1::enumerations::report_base_enum_type::ReportBaseEnumType;
 
 /// GetBaseReportRequest, sent by the CSMS to the Charging Station.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct GetBaseReportRequest {
     /// The Id of the request.
     pub request_id: i32,
@@ -16,7 +16,7 @@ pub struct GetBaseReportRequest {
 
 /// Response to a DeleteCertificateRequest.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct GetBaseReportResponse {
     /// This indicates whether the Charging Station is able to accept this request.
     pub status: GenericDeviceModelStatusEnumType,

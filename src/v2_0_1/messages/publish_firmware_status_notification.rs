@@ -2,7 +2,7 @@ use crate::v2_0_1::enumerations::publish_firmware_status_enum_type::PublishFirmw
 
 /// This contains the field definition of the PublishFirmwareStatusNotificationRequest PDU sent by the Charging Station to the CSMS.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct PublishFirmwareStatusNotificationRequest {
     pub status: PublishFirmwareStatusEnumType,
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -13,5 +13,5 @@ pub struct PublishFirmwareStatusNotificationRequest {
 
 /// This contains the field definition of the PublishFirmwareStatusNotificationResponse PDU sent by the CSMS to the Charging station in response to a PublishFirmwareStatusNotificationRequest.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct PublishFirmwareStatusNotificationResponse {}

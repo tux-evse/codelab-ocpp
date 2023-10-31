@@ -9,7 +9,7 @@ use crate::v2_0_1::enumerations::reading_context_enum_type::ReadingContextEnumTy
 /// To save on mobile data usage, default values of all of the optional fields are such that. The value without any additional fields will be interpreted, as a register reading of active import energy in Wh (Watt-hour) units.
 /// SampledValueType is used by: Common:MeterValueType
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct SampledValueType {
     pub value: f32,
     #[serde(skip_serializing_if = "Option::is_none")]

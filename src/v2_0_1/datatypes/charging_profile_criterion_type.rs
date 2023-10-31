@@ -6,7 +6,7 @@ use crate::v2_0_1::enumerations::charging_profile_purpose_enum_type::ChargingPro
 ///
 /// ChargingProfileCriterionType is used by: get_charging_profiles [GetChargingProfilesRequest](`crate::v2_0_1::messages::get_charging_profiles::GetChargingProfilesRequest`)
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ChargingProfileCriterionType {
     /// Optional. Defines the purpose of the schedule transferred by this profile
     #[serde(skip_serializing_if = "Option::is_none")]

@@ -3,7 +3,7 @@ use crate::v2_0_1::enumerations::get_certificate_id_use_enum_type::GetCertificat
 
 /// CertificateHashDataChainType is used by: GetInstalledCertificateIdsResponse
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct CertificateHashDataChainType {
     /// Required. Indicates the type of the requested certificate(s).
     pub certificate_type: GetCertificateIdUseEnumType,

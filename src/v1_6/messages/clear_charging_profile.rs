@@ -2,7 +2,7 @@ use crate::v1_6::types::{ChargingProfilePurposeType, ClearChargingProfileStatus}
 use validator::Validate;
 
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ClearChargingProfileRequest {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub id: Option<i32>,

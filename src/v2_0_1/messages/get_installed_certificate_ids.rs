@@ -6,7 +6,7 @@ use crate::v2_0_1::enumerations::get_display_messages_status_enum_type::GetDispl
 
 /// Used by the CSMS to request an overview of the installed certificates on a Charging Station.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct GetInstalledCertificateIdsRequest {
     /// Indicates the type of certificates requested.When omitted, all certificate types are requested.
     #[serde(skip_serializing_if = "Option::is_none")]
@@ -15,7 +15,7 @@ pub struct GetInstalledCertificateIdsRequest {
 
 /// Response to a GetInstalledCertificateIDsRequest.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct GetInstalledCertificateIdsResponse {
     /// Charging Station indicates if it can process therequest
     pub status: GetDisplayMessagesStatusEnumType,

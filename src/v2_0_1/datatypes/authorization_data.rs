@@ -3,7 +3,7 @@ use super::{id_token_info_type::IdTokenInfoType, id_token_type::IdTokenType};
 
 /// Contains the identifier to use for authorization
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct AuthorizationData {
     /// Required when UpdateType is Full. This contains information about
     /// authorization status, expiry and group id. For a Differential update

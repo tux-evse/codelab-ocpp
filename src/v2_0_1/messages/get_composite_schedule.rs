@@ -6,7 +6,7 @@ use crate::v2_0_1::enumerations::generic_status_enum_type::GenericStatusEnumType
 
 /// GetCompositeScheduleRequest, sent by the CSMS to the Charging Station.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct GetCompositeScheduleRequest {
     /// Length of the requested schedule in seconds
     pub duration: i32,
@@ -19,7 +19,7 @@ pub struct GetCompositeScheduleRequest {
 
 /// GetCompositeScheduleResponse, sent by the Charging Station to the CSMS in response to a GetCompositeScheduleRequest.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct GetCompositeScheduleResponse {
     /// The Charging Station will indicate if it was ableto process the request
     pub status: GenericStatusEnumType,

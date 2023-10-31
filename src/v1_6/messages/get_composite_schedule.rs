@@ -4,7 +4,7 @@ use crate::v1_6::types::{ChargingRateUnitType, ChargingSchedule, GetCompositeSch
 
 /// This contains the field definition of the GetCompositeSchedule.req PDU sent by the Central System to theCharge Point. See also Get Composite Schedule
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct GetCompositeScheduleRequest {
     /// Required. The ID of the Connector for which the schedule is requested. When ConnectorId=0, the Charge Point will calculate the expected consumption for the grid connection.
     pub connector_id: i32,
@@ -17,7 +17,7 @@ pub struct GetCompositeScheduleRequest {
 
 /// This contains the field definition of the GetCompositeSchedule.conf PDU sent by the Charge Point to the Central System in response to a GetCompositeSchedule.req PDU. See also Get Composite Schedule
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct GetCompositeScheduleResponse {
     /// Required. Status of the request. The Charge Point will indicate if it was able to process the request
     pub status: GetCompositeScheduleStatus,

@@ -7,7 +7,7 @@ use validator::Validate;
 
 /// GetReportRequest, sent by the CSMS to the Charging Station.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Validate, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct GetReportRequest {
     /// The Id of the request.
     pub request_id: i32,
@@ -22,7 +22,7 @@ pub struct GetReportRequest {
 
 /// GetReportRequest, sent by the Charging Station to the CSMS.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct GetReportResponse {
     /// This field indicates whether the ChargingStation was able to accept the request.
     pub status: GenericDeviceModelStatusEnumType,

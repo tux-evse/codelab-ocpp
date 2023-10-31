@@ -8,7 +8,7 @@ use crate::v2_0_1::enumerations::authorize_certificate_status_enum_type::Authori
 
 /// ´AuthorizeRequest`, sent by the Charging Station to the CSMS.
 #[derive(serde::Serialize, serde::Deserialize, Validate, Clone, Debug, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct AuthorizeRequest {
     /// The X.509 certificated presented by EV and encoded in PEM format.
     #[validate(length(min = 0, max = 5500))]
@@ -24,7 +24,7 @@ pub struct AuthorizeRequest {
 /// `AuthorizeResponse`, sent by the
 /// CSMS to the Charging Station in response to an [`AuthorizeRequest`].
 #[derive(serde::Serialize, serde::Deserialize, Clone, Debug, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct AuthorizeResponse {
     /// Certificate status information. - if all certificates are valid: return
     /// `Accepted`. - if one of the certificates was revoked, return `CertificateRevoked`.

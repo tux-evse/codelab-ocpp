@@ -3,7 +3,7 @@ use crate::v2_0_1::enumerations::firmware_status_enum_type::FirmwareStatusEnumTy
 
 /// FirmwareStatusNotifitacionRequest, sent by the Charging Station to the CSMS.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct FirmwareStatusNotificationRequest {
     /// This contains the progress status of the firmware installation.
     pub status: FirmwareStatusEnumType,
@@ -15,7 +15,7 @@ pub struct FirmwareStatusNotificationRequest {
 
 /// FirmwareStatusNotificationResponse, sent by the CSMS to the Charging Station in response to a FirmwareStatusNotificationRequest.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct FirmwareStatusNotificationResponse {
     // No fields are defined.
 }

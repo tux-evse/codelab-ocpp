@@ -8,7 +8,7 @@ use validator::Validate;
 
 /// Used by the CSMS to request installation of a certificate on a Charging Station.
 #[derive(serde::Serialize, serde::Deserialize, Validate, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct InstallCertificateRequest {
     /// Indicates the certificate type that is sent.
     pub certificate_type: InstallCertificateUseEnumType,
@@ -19,7 +19,7 @@ pub struct InstallCertificateRequest {
 
 /// The response to a InstallCertificateRequest, sent by the Charging Station to the CSMS
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct InstallCertificateResponse {
     /// Charging Station indicates if installation wassuccessful.
     pub status: InstallCertificateStatusEnumType,

@@ -6,7 +6,7 @@ use validator::Validate;
 
 /// `CertificateSignedRequest`, sent by the CSMS to the Charging Station.
 #[derive(serde::Serialize, serde::Deserialize, Validate, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct CertificateSignedRequest {
     /// The signed PEM encoded X.509 certificate. This can also contain the necessary sub
     /// CA certificates. In that case, the order of the bundle should follow the
@@ -28,7 +28,7 @@ pub struct CertificateSignedRequest {
 
 /// `CertificateSignedResponse`, sent by the Charging Station to the CSMS in response to a [`CertificateSignedRequest`].
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct CertificateSignedResponse {
     /// Returns whether certificate signing has been accepted, otherwise rejected.
     pub status: CertificateSignedStatusEnumType,

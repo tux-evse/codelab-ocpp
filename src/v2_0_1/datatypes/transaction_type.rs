@@ -3,7 +3,7 @@ use crate::v2_0_1::enumerations::reason_enum_type::ReasonEnumType;
 
 /// TransactionType is used by: TransactionEventRequest
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct TransactionType {
     pub transaction_id: String,
     #[serde(skip_serializing_if = "Option::is_none")]

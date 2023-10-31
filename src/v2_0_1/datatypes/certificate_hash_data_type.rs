@@ -3,7 +3,7 @@ use validator::Validate;
 
 /// CertificateHashDataType is used by: Common:CertificateHashDataChainType , DeleteCertificateRequest , CustomerInformationRequest
 #[derive(serde::Serialize, serde::Deserialize, Validate, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct CertificateHashDataType {
     /// Required. Used algorithms for the hashes provided.
     pub hash_algorithm: HashAlgorithmEnumType,

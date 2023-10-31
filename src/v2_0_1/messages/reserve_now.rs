@@ -8,7 +8,7 @@ use crate::v2_0_1::enumerations::reserve_now_status_enum_type::ReserveNowStatusE
 
 /// This contains the field definitions of the RequestStopTransactionRequest PDU sent to Charging Station by CSMS.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ReserveNowRequest {
     pub id: i32,
     pub expiry_date_time: DateTime<Utc>,
@@ -23,7 +23,7 @@ pub struct ReserveNowRequest {
 
 /// This contains the field definition of the ReserveNowResponse PDU sent by the Charging Station to the CSMS in response toReserveNowRequest PDU.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ReserveNowResponse {
     pub status: ReserveNowStatusEnumType,
     #[serde(skip_serializing_if = "Option::is_none")]

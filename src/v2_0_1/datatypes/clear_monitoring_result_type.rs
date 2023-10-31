@@ -3,7 +3,7 @@ use crate::v2_0_1::enumerations::clear_monitoring_status_enum_type::ClearMonitor
 
 /// ClearMonitoringResultType is used by: ClearVariableMonitoringResponse
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ClearMonitoringResultType {
     /// Required. Result of the clear request for this monitor, identified by its Id.
     pub status: ClearMonitoringStatusEnumType,

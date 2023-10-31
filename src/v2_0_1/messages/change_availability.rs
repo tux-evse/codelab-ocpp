@@ -6,7 +6,7 @@ use crate::v2_0_1::enumerations::operational_status_enum_type::OperationalStatus
 
 /// `ChangeAvailabilityRequest`, sent by the CSMS to the Charging Station.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ChangeAvailabilityRequest {
     /// This contains the type of availability change that the Charging Station should perform.
     pub operational_status: OperationalStatusEnumType,
@@ -17,7 +17,7 @@ pub struct ChangeAvailabilityRequest {
 
 /// `ChangeAvailabilityResponse`, sent by the Charging Station to the CSMS.
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ChangeAvailabilityResponse {
     /// This indicates whether the Charging Station is able to perform the availability change.
     pub status: ChangeAvailabilityStatusEnumType,

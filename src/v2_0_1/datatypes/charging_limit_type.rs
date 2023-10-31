@@ -2,7 +2,7 @@ use crate::v2_0_1::enumerations::charging_limit_source_enum_type::ChargingLimitS
 
 /// ChargingLimitType is used by: NotifyChargingLimitRequest
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ChargingLimitType {
     /// Required. Represents the source of the charging limit.
     pub charging_limit_source: ChargingLimitSourceEnumType,

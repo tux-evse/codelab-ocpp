@@ -4,7 +4,7 @@ use chrono::Utc;
 /// Represents a copy of the firmware that can be loaded/updated on the Charging Station.
 /// FirmwareType is used by: UpdateFirmwareRequest
 #[derive(serde::Serialize, serde::Deserialize, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct FirmwareType {
     pub location: String,
     pub retrieve_date_time: DateTime<Utc>,

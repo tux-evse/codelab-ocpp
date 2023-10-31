@@ -3,7 +3,7 @@ use validator::Validate;
 /// The physical system where an Electrical Vehicle (EV) can be charged.
 // ChargingStationType is used by: BootNotificationRequest
 #[derive(serde::Serialize, serde::Deserialize, Validate, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct ChargingStationType {
     /// Optional. Vendor-specific device identifier.
     #[validate(length(min = 0, max = 25))]

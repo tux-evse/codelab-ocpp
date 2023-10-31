@@ -43,7 +43,7 @@ use chrono::{DateTime, Utc};
 use validator::Validate;
 
 #[derive(serde::Serialize, serde::Deserialize, Validate, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct BootNotificationRequest {
     /// # From OCPP Specification
     /// Optional. This contains a value that identifies the serial number of the Charge Box inside
@@ -100,7 +100,7 @@ pub struct BootNotificationRequest {
 }
 
 #[derive(serde::Serialize, serde::Deserialize, Validate, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct BootNotificationResponse {
     /// # From OCPP Specification
     /// Required. This contains the Central System’s current time.

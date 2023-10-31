@@ -7,7 +7,7 @@ use validator::Validate;
 ///
 /// AdditionalInfoType is used by: [IdTokenType](`crate::v2_0_1::datatypes::id_token_type::IdTokenType`)
 #[derive(serde::Serialize, serde::Deserialize, Validate, Debug, Clone, PartialEq, Default)]
-#[serde(rename_all = "camelCase")]
+#[serde(deny_unknown_fields, rename_all = "camelCase")]
 pub struct AdditionalInfoType {
     /// This field specifies the additional IdToken
     #[validate(length(min = 0, max = 36), custom = "validate_identifier_string")]
